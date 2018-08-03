@@ -1,0 +1,22 @@
+* {
+  font-family: "Work Sans", Arial, Helvetica, sans-serif;
+
+}
+
+body {
+  background-color: black;
+}
+
+#jumbotron {
+  margin-top: 2rem;
+  background: linear-gradient(to bottom right, rgb(151, 243, 189), rgb(247, 168, 230));
+  border-radius: 25px;
+  height: 100%;
+}
+
+#button-to-form {
+  background-color: rgb(255, 20, 184);
+  color: white;
+  font-weight: 700;
+
+}
