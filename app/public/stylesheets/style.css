@@ -14,10 +14,19 @@ body {
   height: 100%;
 }
 
-#button-to-form {
-  background-color: rgb(255, 20, 184);
+.buttons {
   color: white;
   font-weight: 700;
+  border: none;
+}
+
+.button-pink {
+  background-color: rgb(255, 20, 184);
+}
+
+.button-green {
+  background-color: rgb(151, 243, 189);
+  color: black;
 }
 
 .name-ff {
