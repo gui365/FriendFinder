@@ -1,6 +1,7 @@
 var express = require("express"),
     bodyParser = require("body-parser"),
     htmlRoutes = require("./app/routing/htmlRoutes");
+    path = require("path");
 
 // Set up express
 var app = express();
@@ -15,5 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Routing
+app.use(express.static(path.join(__dirname, "./public")));
 app.get("/", htmlRoutes.htmlRoutes.home);
 app.get("/survey", htmlRoutes.htmlRoutes.survey);
