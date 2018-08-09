@@ -3,12 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Super&#9829;FriendFinder</title>
+  <title>Special &#9829; Friend Finder</title>
   <link rel="icon" href="/images/friend-finder.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="./stylesheets/vex/vex.combined.js"></script>
+  <link rel="stylesheet" href="./stylesheets/vex/vex-theme-default.css"/>
+  <link rel="stylesheet" href="./stylesheets/vex/vex.css"/>
   <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
 <body>
@@ -19,16 +23,33 @@
     </div>
     <hr class="my-4">
     <h4>Complete the following form. How much do you agree/disagree with the following statements?</h4>
-    <br>
-    <form>
+    <small>All fields are required</small>
+    
+    <form action="/api/friends" method="POST">
+      <div id="form-name-pic" class="form-row">
+        <div class="form-group col-md-1">
+          <h4 style="font-weight: 700">Name</h4>
+        </div>
+        <div class="form-group col-md-5">
+          <input name="name" id="name" required></input>
+        </div>
+        <div class="form-group col-md-1">
+          <h4 style="font-weight: 700">Pic</h4>
+        </div>
+        <div class="form-group col-md-5">
+          <input name="photo" id="photo" placeholder="Paste link to picture here" required></input>
+        </div>
+      </div>
+      <hr>
+
       <div class="form-row">
         <div class="form-group col-md-1 d-flex align-items-center justify-content-center">
           <h1 style="font-weight: 700">1</h1>
         </div>
         <div class="form-group col-md-11">
           <label for="q1">I believe that unicorns exist</label>
-          <select id="q1" class="form-control">
-            <option selected></option>
+          <select name="scores" id="q1" class="form-control">
+            <option style="display: none"></option>
             <option value="5">a.&nbsp; No doubt!</option>
             <option value="4">b.&nbsp; Most certainly</option>
             <option value="3">c.&nbsp; Could be</option>
@@ -45,8 +66,8 @@
         </div>
         <div class="form-group col-md-11">
           <label for="q2">Chocolate is the best thing that ever happened to mankind</label>
-          <select id="q2" class="form-control">
-            <option selected></option>
+          <select name="scores" id="q2" class="form-control">
+            <option style="display: none"></option>
             <option value="5">a.&nbsp; Hell yeah!</option>
             <option value="4">b.&nbsp; I love me a chocolate</option>
             <option value="3">c.&nbsp; Yes, but also other things...</option>
@@ -63,8 +84,8 @@
         </div>
         <div class="form-group col-md-11">
           <label for="q3">What do you think of English rock band "Queen"?</label>
-          <select id="q3" class="form-control">
-            <option selected></option>
+          <select name="scores" id="q3" class="form-control">
+            <option style="display: none"></option>
             <option value="5">a.&nbsp; Freddy is still alive! Love them</option>
             <option value="4">b.&nbsp; They were pretty good!</option>
             <option value="3">c.&nbsp; Good, but not the best</option>
@@ -81,8 +102,8 @@
         </div>
         <div class="form-group col-md-11">
           <label for="q4">Traveling to other countries is a great way to meet different people and cultures</label>
-          <select id="q4" class="form-control">
-            <option selected></option>
+          <select name="scores" id="q4" class="form-control">
+            <option style="display: none"></option>
             <option value="5">a.&nbsp; Traveling is a life-changing experience</option>
             <option value="4">b.&nbsp; It can open your mind and be more receptive to cultural differences</option>
             <option value="3">c.&nbsp; I travel mostly to relax and don't mingle much</option>
@@ -99,8 +120,8 @@
         </div>
         <div class="form-group col-md-11">
           <label for="q5">My go-to beverage is:</label>
-          <select id="q5" class="form-control">
-            <option selected></option>
+          <select name="scores" id="q5" class="form-control">
+            <option style="display: none"></option>
             <option value="5">a.&nbsp; Anything with alcohol!</option>
             <option value="4">b.&nbsp; Soda</option>
             <option value="3">c.&nbsp; Coffee</option>
@@ -117,8 +138,8 @@
         </div>
         <div class="form-group col-md-11">
           <label for="q6">I am most active and productive early in the morning</label>
-          <select id="q6" class="form-control">
-            <option selected></option>
+          <select name="scores" id="q6" class="form-control">
+            <option style="display: none"></option>
             <option value="5">a.&nbsp; 4 AM! Let's go!!!</option>
             <option value="4">b.&nbsp; Most days, especially after a good night sleep</option>
             <option value="3">c.&nbsp; Some days, some not</option>
@@ -135,8 +156,8 @@
         </div>
         <div class="form-group col-md-11">
           <label for="q7">Playing a game is fun only when you win</label>
-          <select id="q7" class="form-control">
-            <option selected></option>
+          <select name="scores" id="q7" class="form-control">
+            <option style="display: none"></option>
             <option value="5">a.&nbsp; I can't stand losing. I'll cheat if I have to in order to win</option>
             <option value="4">b.&nbsp; A little competition never hurt anybody</option>
             <option value="3">c.&nbsp; Competing is important, but so is having fun</option>
@@ -153,8 +174,8 @@
         </div>
         <div class="form-group col-md-11">
           <label for="q8">Everybody should eat cilantro daily</label>
-          <select id="q8" class="form-control">
-            <option selected></option>
+          <select name="scores" id="q8" class="form-control">
+            <option style="display: none"></option>
             <option value="5">a.&nbsp; I put that s**t on everything!</option>
             <option value="4">b.&nbsp; I use cilantro a lot, not on everything though</option>
             <option value="3">c.&nbsp; Cilantro is good for some types of food only, like Thai or Mexican</option>
@@ -171,8 +192,8 @@
         </div>
         <div class="form-group col-md-11">
           <label for="q9">I can think of a million things to do during a blackout</label>
-          <select id="q9" class="form-control">
-            <option selected></option>
+          <select name="scores" id="q9" class="form-control">
+            <option style="display: none"></option>
             <option value="5">a.&nbsp; No internet or TV? Life has no meaning!</option>
             <option value="4">b.&nbsp; I'll distract myself with something until electricity comes back</option>
             <option value="3">c.&nbsp; I can finally take the time to read that book</option>
@@ -189,8 +210,8 @@
         </div>
         <div class="form-group col-md-11">
           <label for="q10">How often do you go to farmer's markets?</label>
-          <select id="q10" class="form-control">
-            <option selected></option>
+          <select name="scores" id="q10" class="form-control">
+            <option style="display: none"></option>
             <option value="5">a.&nbsp; I go every week! I love the fresh fruits and veggies and supporting the local community</option>
             <option value="4">b.&nbsp; I go out of my way to find one, I buy a lot but don't do my main grocery shopping here</option>
             <option value="3">c.&nbsp; I only go if it's close to my house, and I'll only buy a couple of products</option>
@@ -201,7 +222,7 @@
       </div>
       <hr>
 
-      <button type="submit" class="btn btn-primary buttons button-green">Done!</button>
+      <button id="button-done" type="submit" class="btn btn-primary buttons button-green">Done!</button>
     </form>
   </div>
 
@@ -211,5 +232,48 @@
       <a href="https://github.com/gui365/FriendFinder" target="_blank"><i title="Repo" class="fab fa-github"></i></a>
     </div>
   </footer>
+
+  <script>
+
+    $("#button-done").on("click", () => {
+      event.preventDefault();
+
+      for (let i = 1; i < 11; i++) {
+        if(isNaN(parseInt($("#q" + i).val()))){
+          vex.dialog.alert("Please answer all the questions");
+          return;
+        }
+      }
+      
+      var newUser = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: [
+          parseInt($("#q1").val()),
+          parseInt($("#q2").val()),
+          parseInt($("#q3").val()),
+          parseInt($("#q4").val()),
+          parseInt($("#q5").val()),
+          parseInt($("#q6").val()),
+          parseInt($("#q7").val()),
+          parseInt($("#q8").val()),
+          parseInt($("#q9").val()),
+          parseInt($("#q10").val())
+        ]
+      };
+      
+      $.post("/api/friends", newUser)
+        .then((data) => {
+          vex.dialog.open({
+          message: `Your best match is:`,
+          input: [`<h2>${data.name}</h2>`,
+          `<img style="width: 200px; margin-bottom: 1rem;" src="${data.photo}" alt="no photo available">`
+          ].join("")
+          });
+        });
+    
+    });
+
+  </script>
 </body>
 </html>

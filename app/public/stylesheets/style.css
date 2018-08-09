@@ -78,6 +78,47 @@ footer p {
   width: 40%;
 }
 
+input {
+  width: 100%;
+  height: 40px;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid rgb(212, 212, 212);
+}
+
+#form-name-pic:nth-child(odd) {
+  text-align: right;
+  align-items: center;
+}
+
+form {
+  margin-top: 2rem;
+}
+
+.vex-content {
+  margin: 3rem auto 0 auto;
+  width: 50%;
+  padding: 1.5rem;
+  border-radius: 5px;
+  text-align: center
+}
+
+.vex-dialog-message {
+  margin-bottom: 1rem;
+}
+
+.vex-dialog-buttons button {
+  background-color: black;
+  color: white;
+  width: 40%;
+  border-radius: 5px;
+  border: none;
+}
+
+.vex-last {
+  display: none;
+}
+
 /* PSEUDOCLASSES */
 .buttons:hover {
   color: white;
@@ -89,3 +130,4 @@ footer i:hover {
   /* font-size: 1.9rem; */
   color: rgb(255, 20, 184);
 }
+
