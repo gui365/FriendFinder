@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+  margin-bottom: 70px;
+  background: linear-gradient(to bottom right, rgb(151, 243, 189, 0.7), rgba(255, 255, 255, 0.7), rgb(247, 168, 230, 0.7)), url("../images/group.jpg") no-repeat; 
+  background-size: 100% auto; 
+}
+
+#jumbotron {
+  text-align: center;
+  margin-top: 30vh;
+  background-color: rgb(255, 255, 255, 0);
+  border-radius: 25px;
+  height: 100%;
+}
