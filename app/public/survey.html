@@ -18,35 +18,40 @@
 <body>
   <div id="jumbotron" class="jumbotron container">
     <div class="d-flex align-items-center">
-      <a href="/"><img style="width: 80px; height: 80px" src="./images/friend-finder.png" alt="FriendFinder Logo"></a>
+      <a href="/"><img id="logo-survey" src="./images/friend-finder.png" alt="FriendFinder Logo"></a>
       <h2 class="name-ff" class="display-4">Questionnaire</h2>
     </div>
     <hr class="my-4">
-    <h4>Complete the following form. How much do you agree/disagree with the following statements?</h4>
-    <small>All fields are required</small>
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Complete the following form. How much do you agree/disagree with the following statements?</h4>
+        <small>All fields are required</small>
+      </div>
+    </div>
+    
     
     <form action="/api/friends" method="POST">
       <div id="form-name-pic" class="form-row">
-        <div class="form-group col-md-1">
+        <div class="form-group col-sm-1">
           <h4 style="font-weight: 700">Name</h4>
         </div>
-        <div class="form-group col-md-5">
+        <div class="form-group col-sm-5">
           <input name="name" id="name" required></input>
         </div>
-        <div class="form-group col-md-1">
+        <div class="form-group col-sm-1">
           <h4 style="font-weight: 700">Pic</h4>
         </div>
-        <div class="form-group col-md-5">
+        <div class="form-group col-sm-5">
           <input name="photo" id="photo" placeholder="Paste link to picture here" required></input>
         </div>
       </div>
       <hr>
 
       <div class="form-row">
-        <div class="form-group col-md-1 d-flex align-items-center justify-content-center">
+        <div class="form-group col-sm-1 d-flex align-items-center justify-content-center">
           <h1 style="font-weight: 700">1</h1>
         </div>
-        <div class="form-group col-md-11">
+        <div class="form-group col-sm-11">
           <label for="q1">I believe that unicorns exist</label>
           <select name="scores" id="q1" class="form-control">
             <option style="display: none"></option>
@@ -61,10 +66,10 @@
       <hr>
 
       <div class="form-row">
-        <div class="form-group col-md-1 d-flex align-items-center justify-content-center">
+        <div class="form-group col-sm-1 d-flex align-items-center justify-content-center">
           <h1 style="font-weight: 700">2</h1>
         </div>
-        <div class="form-group col-md-11">
+        <div class="form-group col-sm-11">
           <label for="q2">Chocolate is the best thing that ever happened to mankind</label>
           <select name="scores" id="q2" class="form-control">
             <option style="display: none"></option>
@@ -79,10 +84,10 @@
       <hr>
       
       <div class="form-row">
-        <div class="form-group col-md-1 d-flex align-items-center justify-content-center">
+        <div class="form-group col-sm-1 d-flex align-items-center justify-content-center">
           <h1 style="font-weight: 700">3</h1>
         </div>
-        <div class="form-group col-md-11">
+        <div class="form-group col-sm-11">
           <label for="q3">What do you think of English rock band "Queen"?</label>
           <select name="scores" id="q3" class="form-control">
             <option style="display: none"></option>
@@ -97,10 +102,10 @@
       <hr>
 
       <div class="form-row">
-        <div class="form-group col-md-1 d-flex align-items-center justify-content-center">
+        <div class="form-group col-sm-1 d-flex align-items-center justify-content-center">
           <h1 style="font-weight: 700">4</h1>
         </div>
-        <div class="form-group col-md-11">
+        <div class="form-group col-sm-11">
           <label for="q4">Traveling to other countries is a great way to meet different people and cultures</label>
           <select name="scores" id="q4" class="form-control">
             <option style="display: none"></option>
@@ -115,10 +120,10 @@
       <hr>
 
       <div class="form-row">
-        <div class="form-group col-md-1 d-flex align-items-center justify-content-center">
+        <div class="form-group col-sm-1 d-flex align-items-center justify-content-center">
           <h1 style="font-weight: 700">5</h1>
         </div>
-        <div class="form-group col-md-11">
+        <div class="form-group col-sm-11">
           <label for="q5">My go-to beverage is:</label>
           <select name="scores" id="q5" class="form-control">
             <option style="display: none"></option>
@@ -133,10 +138,10 @@
       <hr>
 
       <div class="form-row">
-        <div class="form-group col-md-1 d-flex align-items-center justify-content-center">
+        <div class="form-group col-sm-1 d-flex align-items-center justify-content-center">
           <h1 style="font-weight: 700">6</h1>
         </div>
-        <div class="form-group col-md-11">
+        <div class="form-group col-sm-11">
           <label for="q6">I am most active and productive early in the morning</label>
           <select name="scores" id="q6" class="form-control">
             <option style="display: none"></option>
@@ -151,10 +156,10 @@
       <hr>
 
       <div class="form-row">
-        <div class="form-group col-md-1 d-flex align-items-center justify-content-center">
+        <div class="form-group col-sm-1 d-flex align-items-center justify-content-center">
           <h1 style="font-weight: 700">7</h1>
         </div>
-        <div class="form-group col-md-11">
+        <div class="form-group col-sm-11">
           <label for="q7">Playing a game is fun only when you win</label>
           <select name="scores" id="q7" class="form-control">
             <option style="display: none"></option>
@@ -169,10 +174,10 @@
       <hr>
 
       <div class="form-row">
-        <div class="form-group col-md-1 d-flex align-items-center justify-content-center">
+        <div class="form-group col-sm-1 d-flex align-items-center justify-content-center">
           <h1 style="font-weight: 700">8</h1>
         </div>
-        <div class="form-group col-md-11">
+        <div class="form-group col-sm-11">
           <label for="q8">Everybody should eat cilantro daily</label>
           <select name="scores" id="q8" class="form-control">
             <option style="display: none"></option>
@@ -187,10 +192,10 @@
       <hr>
 
       <div class="form-row">
-        <div class="form-group col-md-1 d-flex align-items-center justify-content-center">
+        <div class="form-group col-sm-1 d-flex align-items-center justify-content-center">
           <h1 style="font-weight: 700">9</h1>
         </div>
-        <div class="form-group col-md-11">
+        <div class="form-group col-sm-11">
           <label for="q9">I can think of a million things to do during a blackout</label>
           <select name="scores" id="q9" class="form-control">
             <option style="display: none"></option>
@@ -205,10 +210,10 @@
       <hr>
 
       <div class="form-row">
-        <div class="form-group col-md-1 d-flex align-items-center justify-content-center">
+        <div class="form-group col-sm-1 d-flex align-items-center justify-content-center">
           <h1 style="font-weight: 700">10</h1>
         </div>
-        <div class="form-group col-md-11">
+        <div class="form-group col-sm-11">
           <label for="q10">How often do you go to farmer's markets?</label>
           <select name="scores" id="q10" class="form-control">
             <option style="display: none"></option>
@@ -229,7 +234,6 @@
   <footer class="footer d-flex justify-content-between">
     <div class="footer-div">
       <a href="/api/friends" target="_blank"><i title="API" class="fas fa-database"></i></a>
-      <a href="https://github.com/gui365/FriendFinder" target="_blank"><i title="Repo" class="fab fa-github"></i></a>
     </div>
   </footer>
 

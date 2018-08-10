@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="./stylesheets/style.css">
   <link rel="stylesheet" href="./stylesheets/home.css">
 </head>
@@ -24,10 +25,17 @@
     <div class="footer-div">
       <a href="/api/friends" target="_blank"><i title="API" class="fas fa-database"></i></a>
       <a href="https://github.com/gui365/FriendFinder" target="_blank"><i title="Repo" class="fab fa-github"></i></a>
-    </div>
-    <div class="footer-div">
-      <p>Copyright &copy; Guillermo Barila | Images provided by http://www.icons8.com</p>
+      <i id="copyright" class="far fa-copyright"></i>
+      <span id="copyright-text" class="no-display">Copyright &copy; Guillermo Barila | Images provided by http://www.icons8.com</span>
     </div>
   </footer>
+
+  <script>
+    $("#copyright").hover(() => {
+      $("#copyright-text").toggleClass("no-display");
+    }, () => {
+      $("#copyright-text").toggleClass("no-display");
+    });
+  </script>
 </body>
 </html>
