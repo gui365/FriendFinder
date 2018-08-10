@@ -1,3 +1,4 @@
+<img alt="Friend•Finder App logo" src="./app/public/images/friend-finder.png" style="width: 100px;"><br>
 # Friend•Finder App
 
 This project was the homework for week 13 of the Penn Coding Boot Camp.
