@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Special &#9829; Friend Finder</title>
+  <title>Friend•Finder</title>
   <link rel="icon" href="/images/friend-finder.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
@@ -18,7 +18,7 @@
 <body>
   <div id="jumbotron" class="jumbotron container">
     <div class="d-flex align-items-center">
-      <img style="width: 80px; height: 80px" src="./images/friend-finder.png" alt="FriendFinder Logo">
+      <a href="/"><img style="width: 80px; height: 80px" src="./images/friend-finder.png" alt="FriendFinder Logo"></a>
       <h2 class="name-ff" class="display-4">Questionnaire</h2>
     </div>
     <hr class="my-4">
@@ -238,6 +238,11 @@
     $("#button-done").on("click", () => {
       event.preventDefault();
 
+      if ($("#name").val() === "" || $("#photo").val() === "") {
+        vex.dialog.alert("Please enter both your name AND link to your picture");
+        return;
+      };
+
       for (let i = 1; i < 11; i++) {
         if(isNaN(parseInt($("#q" + i).val()))){
           vex.dialog.alert("Please answer all the questions");
@@ -267,7 +272,7 @@
           vex.dialog.open({
           message: `Your best match is:`,
           input: [`<h2>${data.name}</h2>`,
-          `<img style="width: 200px; margin-bottom: 1rem;" src="${data.photo}" alt="no photo available">`
+          `<img class="vex-modal-image" src="${data.photo}" alt="no photo available">`
           ].join("")
           });
         });
